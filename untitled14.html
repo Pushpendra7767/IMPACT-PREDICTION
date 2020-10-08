@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Impact Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="ID" placeholder="ID" required="required" />
+        <input type="text" name="ID_status" placeholder="ID STATUS" required="required" />
+		<input type="text" name="count_reassign" placeholder="COUNT REASSIGN" required="required" />
+		<input type="text" name="count_updated" placeholder="COUNT UPDATED" required="required" />
+		<input type="text" name="ID_caller" placeholder="ID CALLER" required="required" />
+		<input type="text" name="opened_by" placeholder="OPENED BY" required="required" />
+		<input type="text" name="Created_by" placeholder="CREATED BY" required="required" />
+		<input type="text" name="updated_by" placeholder="UPDATED BY" required="required" />
+		<input type="text" name="location" placeholder="LOCATION" required="required" />
+		<input type="text" name="category_ID" placeholder="CATEGORY ID" required="required" />
+		<input type="text" name="user_symptom" placeholder="USER SYMPTOM" required="required" />
+		<input type="text" name="Support_group" placeholder="SUPPORT GROUP" required="required" />
+		<input type="text" name="support_incharge" placeholder="SUPPORT INCHARGE" required="required" />
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
